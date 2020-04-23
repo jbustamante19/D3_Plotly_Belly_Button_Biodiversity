@@ -80,10 +80,31 @@ d3.json("../../samples.json").then((data)=> {
     demoInfo.html("");
 
     
-    Object.entries(current).forEach(key,value){   
-        demoInfo.append("h5").text(key + ": " + value + "\n");    
-   };
+    console.log("what up");
+    console.log(current);    
+    for (let [key, value] of Object.entries(current[0])) {
+        demoInfo.append("h5").text(key + ": " + value + "\n");
+        }
 });
+
+function handleSubmit() {
+    // Prevent the page from refreshing
+    d3.event.preventDefault();
+  
+    // Select the input value from the form
+    var theID = d3.select("#selDataset").node().value;
+    console.log(theID);
+  
+    // clear the input value
+    d3.select("#selDataset").node().value = "";
+  
+    // Build the plot with the new stock
+    buildPlot(theID);
+    fillDemo(theID);
+
+};
+
+  
     
 
   
