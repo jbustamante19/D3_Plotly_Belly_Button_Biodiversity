@@ -1,2 +1,2 @@
 # Plotly-Belly-Button-Biodiversity
- D3 library, chart
+ Built interactive dashboard using D3 library to catalog microbes that live in the human navels
